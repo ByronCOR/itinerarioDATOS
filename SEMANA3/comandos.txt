@@ -1,0 +1,114 @@
+x <- 3
+y <- 4
+z <- x + y
+print(z)
+z
+
+a <- 2 > 4
+b <- 8 == 2 ** 3
+a & b
+a | b
+s<-"HOLA MUNDO"
+p <- 8L
+# como lo trata logicamente al objeto
+class(p)
+mode(p)
+#como lo almacena
+typeof(p)
+
+#VECTORES 
+v1 <- c(3,6,8)
+class(v1)
+typeof(v1)
+v1[2]
+v2<-c(4L,8L,9L)
+class(v1)
+typeof(v1)
+
+v3 <- v1 + v2
+class(v3)
+typeof(v3)
+ v4 <- c(10:20)
+
+ 
+ #directorio de trabajo 
+ # me devuelve el directorio actual del estudio
+ getwd()
+ 
+ setwd("C:/Users/SALASC/Desktop/itinerarioDATOS/SEMANA3")
+ 
+ 
+ # carga de datos desde archivos CSv
+ ?read.csv
+datos <- read.csv("C:/Users/SALASC/Desktop/titanic.csv") 
+
+class(datos)
+typeof(datos)
+
+#CARGA desde  Excel}
+install.packages("xlsx")
+
+library("xlsx")
+
+
+datos2 <- read.xlsx("C:/Users/SALASC/Desktop/titanic.xlsx",1)
+class(datos2)
+typeof(datos2)
+# inspeccionar datos 
+print(datos)
+datos
+head(datos)
+#cuando tnego un data set y quiero ver la estructura 
+str(datos)
+# quiero ver un resumen de los datos 
+summary(datos)
+# si quiero ver cuantas observaiones y variables tienes a nivel de
+dim(datos)
+
+# como filtrar 
+#SELECCIONAR O CONSULTAR DATOS 
+x1<- datos$Name
+#puedo poner 2 especficacion si pongo 1 valor pone a proyeccion p"or defecto
+#x2<-datos[Seleccion,proyeccion]
+x2<-datos[,c("Name","Age")]
+x3<-datos[datos$Pclass==1,c("Name","Age")]
+
+?subset
+#hay tres parametros 1 los datsos 2 subconjuto de datos que quiero obtener y3 el que quiero seleccionar
+x4<-subset(datos,subset = Pclass==1 ,select =c(Name,Age))
+x5<-subset(datos,Pclass==1 ,c(Name,Age))
+str(datos)
+#puedo decir lo que no quiero obtener
+x5<-subset(datos,Pclass==1 ,-c(PassengerId,Name,Ticket,Cabin))
+
+
+#ESTADISTICAS 
+
+#MEDIA
+mean(datos$Fare)
+#mediana
+median(datos$Fare)
+#maximo
+max(datos$Fare)
+#minimo
+min(datos$Fare)
+#suma
+sum(datos$Fare)
+#desviacion estandar 
+sd(datos$Fare)
+#varinaza
+var(datos$Fare)
+#rango
+range(datos$Fare)
+diff(range(datos$Fare))
+#cuando son variables categoricas le sael una tabla de frecuencia 
+table(datos$Embarked)
+
+# AGREGAR DERIVADOS 
+datos$GrupoEdad <- ifelse(datos$Age >=18, "MAYOR","MENOR")
+
+#EXPORTAR DATOS
+# como guardar en un archivo csv
+?write.table
+
+write.table(datos,"titanic_new.csv",row.names = FALSE,sep = ",")
