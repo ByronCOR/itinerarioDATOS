@@ -1,0 +1,76 @@
+Fundamentos de Analisis de datos
+Extraccion de datos
+
+primeras etapas de un proceso de datos:
+ 
+1.entededimiento del negocio
+2.compresion de los datos :a partir de las fuentes 
+3.preparacion de los datos 
+
+ hay multiples fuentes 
+ tipos de datos semantica estructura  bases de datos  esquemas  (diferentes)
++                       COMPLEJIDAD                          -
+
+
+TENER CUIDADO CON LA PROPIEDAD INTELECTUAL  DE LOS DATOS (problemas legales)
+confidencialidad de la infomacion anonimatos
+
+
+
+E 
+ IDENTIFICAR
+-formatos
+-cual sera la frecuencia de extraccion
+orden 
+minimizar el tiempo de carga (eficiencia)
+
+extraer datos de forma cruda 
+
+
+T
+
+aqui se hace la limpieza de los datos 
+ convertir datos  brutos 
+
+
+L 
+son datos ya preparados ya pasarlos  a un almacen de datos un:
+DataWarehouse,
+DataLake,
+Base de datos tradicional,  
+archivo  o  formato propietario 
+
+
+ETL 
+ayuda a integrar datos 
+mejora la calidad de los datos 
+un soporte para las decisiones
+Mejora acccedr a los datos 
+permite  la Escalavilidad
+Automatiza el proceso de mover y traformar los datos , minimizando lo errrores  EFICIENCIA OPERATIVA 
+Cumplimiento y seguridad de Datos 
+
+
+llibreria 
+xlsx archivos excesl
+DBI interactuar a una base de datos relacional
+httr  datos de SPIs 
+rvest  web scraping 
+jsonlite  leer  y escribir archivos JSON
+
+dplyr consultas 
+tidyr  trasforma
+janitor limpieza
+
+
+diferencia entre lectura o consumo de datos 
+
+lectura: cuando traemos datos que ya esta n almacenados o registrado solo los importo 
+
+consumo: es cuando accedo  a los datos de fuentes dinamicas  ejemplo APIs o servicios en linea 
+visualizacion de dtso : representacion grafica 
+
+en el analisis exploratori o tambien hay visualizacion 
+
+
+
